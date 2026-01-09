@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Layout } from './components/Layout';
-import { Login } from './components/Login';
-import { Dashboard } from './components/Dashboard';
-import { AgencyList } from './components/AgencyList';
-import { DebtAssignment } from './components/DebtAssignment';
-import { CaseList } from './components/CaseList';
-import { SLAConfig } from './components/SLAConfig';
-import { StatusView } from './components/StatusView';
-import { Reports } from './components/Reports';
-import { UserRole } from './types';
+import { Layout } from './components/Layout.tsx';
+import { Login } from './components/Login.tsx';
+import { Dashboard } from './components/Dashboard.tsx';
+import { AgencyList } from './components/AgencyList.tsx';
+import { DebtAssignment } from './components/DebtAssignment.tsx';
+import { CaseList } from './components/CaseList.tsx';
+import { SLAConfig } from './components/SLAConfig.tsx';
+import { StatusView } from './components/StatusView.tsx';
+import { Reports } from './components/Reports.tsx';
+import { UserRole } from './types.ts';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
