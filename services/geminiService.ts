@@ -1,7 +1,11 @@
 // services/geminiService.ts
 
-export async function callGemini(prompt: string): Promise<string> {
-  // Mocked Gemini response for frontend demo
+/**
+ * Mocked Gemini service for frontend demo.
+ * In production, this would call a backend API.
+ */
+
+export async function chatWithAI(prompt: string): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(
@@ -9,4 +13,9 @@ export async function callGemini(prompt: string): Promise<string> {
       );
     }, 800);
   });
+}
+
+// Optional alias (if other files use this name)
+export async function callGemini(prompt: string): Promise<string> {
+  return chatWithAI(prompt);
 }
