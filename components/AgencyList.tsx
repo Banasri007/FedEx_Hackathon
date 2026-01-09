@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Search, ShieldAlert, CheckCircle, BarChart3, Bot } from 'lucide-react';
-import { Agency, AgencyStatus } from '../types';
-import { analyzeAgencyRisk } from '../services/geminiService';
+import { Agency, AgencyStatus } from '../types.ts';
+import { analyzeAgencyRisk } from '../services/geminiService.ts';
 
 const mockAgencies: Agency[] = [
   { id: '1', name: 'Global Recovery Partners', region: 'North America', status: AgencyStatus.ACTIVE, complianceScore: 98, recoveryRate: 72, activeCases: 1450, contactEmail: 'ops@grp.com', lastAuditDate: '2023-11-15' },
