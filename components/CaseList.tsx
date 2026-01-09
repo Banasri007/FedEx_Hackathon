@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Case, CaseStatus } from '../types';
+import { Case, CaseStatus } from '../types.ts';
 import { 
   Clock, CheckCircle, AlertCircle, ChevronRight, Upload, Phone, Mail, 
   MapPin, Calendar, FileText, Mic, DollarSign, Search, Eye, Edit3, Lock, Send, ShieldCheck, Bot
