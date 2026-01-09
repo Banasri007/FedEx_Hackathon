@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutDashboard, Users, Briefcase, FileText, Settings, ShieldCheck, LogOut, Activity, Send } from 'lucide-react';
-import { UserRole } from '../types';
+import { UserRole } from '../types.ts';
 
 interface SidebarProps {
   currentView: string;
