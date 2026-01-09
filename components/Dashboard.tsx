@@ -6,8 +6,8 @@ import {
   DollarSign, AlertTriangle, MessageSquare, Send, Clock, CheckCircle, 
   TrendingUp, Users, FileText, ShieldAlert, Briefcase, User
 } from 'lucide-react';
-import { UserRole } from '../types';
-import { chatWithAI } from '../services/geminiService';
+import { UserRole } from '../types.ts';
+import { chatWithAI } from '../services/geminiService.ts';
 
 interface DashboardProps {
     role: UserRole;
@@ -20,8 +20,7 @@ interface ChatMessage {
 
 // Reusable Countdown Component
 const CountdownTimer = ({ daysLeft }: { daysLeft: number }) => {
-    // Initialize state with time based on daysLeft
-    const [time, setTime] = useState(daysLeft * 24 * 60 * 60);
+    const [time, setTime] = useState(Math.max(0, Math.floor(daysLeft * 24 * 60 * 60)));
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -73,7 +72,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
         ? 'You are a FedEx Admin Assistant. Analyze recovery amounts, SLA violations, and DCA performance.' 
         : 'You are a DCA Agent Assistant. Analyze assigned cases, due dates, and SLA countdowns.';
     
-    // Simulate interactive flow by sending history (simplified here by just sending query + context)
     const responseText = await chatWithAI(chatQuery, context);
     
     // Add AI Message
@@ -97,13 +95,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
     </div>
   );
 
-  // --- FedEx Admin Interface ---
   if (isAdmin) {
     return (
       <div className="space-y-6">
         <h1 className="text-2xl font-bold text-gray-900">Admin Overview</h1>
         
-        {/* Metric Row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <KPICard title="Cases Recovered" value="1,240" icon={CheckCircle} colorClass="bg-green-500" />
           <KPICard title="Amount Recovered" value="$12.4M" icon={DollarSign} colorClass="bg-purple-600" />
@@ -112,7 +108,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
         </div>
 
         <div className="grid grid-cols-12 gap-6">
-             {/* Performance Level */}
              <div className="col-span-12 lg:col-span-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
                 <h3 className="font-bold text-gray-800 text-lg mb-6">DCA Performance Levels</h3>
                 <div className="h-64">
@@ -133,7 +128,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
                 </div>
              </div>
 
-             {/* Interactive AI Chatbot */}
              <div className="col-span-12 lg:col-span-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col h-[500px]">
                 <div className="flex items-center space-x-2 mb-4 border-b border-gray-100 pb-4">
                     <div className="p-2 bg-purple-100 rounded-lg">
@@ -186,12 +180,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
     );
   }
 
-  // --- DCA Interface ---
   return (
     <div className="space-y-6">
         <h1 className="text-2xl font-bold text-gray-900">DCA Dashboard</h1>
         
-        {/* KPI Row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <KPICard title="Total Assigned" value="340" icon={Briefcase} colorClass="bg-blue-600" />
             <KPICard title="Due Today" value="12" icon={Clock} colorClass="bg-orange-500" subText="5 Overdue" />
@@ -200,7 +192,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Status Breakdown */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
                 <h3 className="font-bold text-gray-800 mb-4">Case Status Breakdown</h3>
                 <div className="space-y-4">
@@ -223,7 +214,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ role }) => {
                 </div>
             </div>
             
-            {/* SLA Countdowns */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
                 <h3 className="font-bold text-gray-800 mb-4">SLA Countdown</h3>
                 <div className="space-y-3">
