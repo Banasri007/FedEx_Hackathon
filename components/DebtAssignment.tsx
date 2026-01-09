@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Briefcase, Upload, Plus, ShieldCheck, Users, Save, ChevronDown, CheckCircle, Bot, Send, FileText, AlertCircle, X, Trash2, ArrowLeft } from 'lucide-react';
-import { extractDetailsFromDoc } from '../services/geminiService';
+import { extractDetailsFromDoc } from '../services/geminiService.ts';
 
 type SubView = 'hub' | 'manual-add' | 'sla-config' | 'dca-select';
 
