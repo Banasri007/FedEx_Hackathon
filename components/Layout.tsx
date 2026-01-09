@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
-import { UserRole } from '../types';
+import { Sidebar } from './Sidebar.tsx';
+import { UserRole } from '../types.ts';
 import { Bell, Search } from 'lucide-react';
 
 interface LayoutProps {
