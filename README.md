@@ -1,4 +1,4 @@
-# FedEx_DCA_Connect
+# FedEX_DCA_Connect
 
 # FedEx DCA Connect (Enterprise Governance Portal)
 
@@ -25,7 +25,7 @@ The platform leverages the `@google/genai` SDK to provide deep intelligence:
 
 ---
 
-## 🛠 Technical Stack
+## Technical Stack
 
 - **Frontend:** React 19 (ES6+ Modules)
 - **Styling:** Tailwind CSS (Enterprise "Lavender & Indigo" Theme)
@@ -35,7 +35,7 @@ The platform leverages the `@google/genai` SDK to provide deep intelligence:
 
 ---
 
-## 💻 Getting Started
+## Getting Started
 
 ### Prerequisites
 - A modern web browser (Chrome, Edge, or Safari).
@@ -71,7 +71,7 @@ The platform leverages the `@google/genai` SDK to provide deep intelligence:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - `index.html`: Main entry point with import maps for dependency management.
 - `index.tsx`: React root mounting and initialization.
@@ -87,7 +87,7 @@ The platform leverages the `@google/genai` SDK to provide deep intelligence:
 
 ---
 
-## 🛡 Security & Compliance
+## Security & Compliance
 - **Role-Based Access Control (RBAC):** Strict view separation between FedEx HQ and external partners.
 - **Auditability:** Every action is logged with timestamps and user IDs.
 - **Privacy:** Document processing via Gemini is handled with enterprise-grade parameters to ensure data integrity.
