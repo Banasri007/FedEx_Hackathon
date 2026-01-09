@@ -5,6 +5,9 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     port: Number(process.env.PORT),
-    host: "0.0.0.0"
+    host: "0.0.0.0",
+    allowedHosts: [
+      "fedexhackathon-production.up.railway.app"
+    ]
   }
 });
