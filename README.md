@@ -84,6 +84,8 @@ The platform leverages the `@google/genai` SDK to provide deep intelligence:
     - `DebtAssignment.tsx`: The "Hub" for manual entry, CSV upload, and AI document scanning.
     - `AgencyList.tsx`: Network management and AI risk analysis.
     - `CaseList.tsx`: Detailed operational view for DCA agents.
+### Prototype Demo Video:
+https://youtu.be/04iCGPczpz0?si=KicTCB-lIakiRYze
 
 ---
 
